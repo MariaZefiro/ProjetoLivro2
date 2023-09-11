@@ -245,8 +245,8 @@ public class Main {
                     int k;
                     System.out.println("Qual revista deseja excluir?");
                     retorno = inp.next();
-                    if (Integer.parseInt(retorno) <= i && Integer.parseInt(retorno) >= 1) {
-                        i--;
+                    if (Integer.parseInt(retorno) <= j && Integer.parseInt(retorno) >= 1) {
+                        j--;
                         for (k = Integer.parseInt(retorno) - 1; k <= 1; k++) {
                             revistas[k] = revistas[k + 1];
                         }
