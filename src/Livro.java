@@ -14,6 +14,10 @@ public class Livro {
         this.CDD = CDD;
     }
 
+    public Livro(){
+
+    }
+
     public String getNome() {
         return this.nome;
     }

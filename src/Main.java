@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
@@ -8,22 +9,22 @@ public class Main {
         int i = 0;
         int j = 0;
 
-        do{
+        do {
             System.out.println("1 - Cadastrar livro/revista");
             System.out.println("2 - Procurar livro/revista");
             System.out.println("3 - Listar livros/revistas");
             System.out.println("4 - Quantidade cadastrada/livre");
-            System.out.println("5 - Excluir último livro da lista");
-            System.out.println("6 - Ordenar livros cadastrados");
+            System.out.println("5 - Excluir livro/revista");
+            System.out.println("6 - Ordenar livros/revistas cadastrados");
             System.out.println("7 - Encerrar programa");
 
             retorno = inp.next();
 
             //Cadastrar livro/revista
-            if(retorno.equals("1")){
+            if (retorno.equals("1")) {
                 System.out.println("1- Livro \n2- Revista");
                 retorno = inp.next();
-                if(retorno.equals("1")) {
+                if (retorno.equals("1")) {
                     String nome, autor, editora, prateleira, ISBN;
                     int edicao, ano, secao, CDD;
 
@@ -58,9 +59,8 @@ public class Main {
 
                     i++;
                     System.out.println("Livro cadastrado com sucesso!");
-                }
-                else if(retorno.equals("2")){
-                    String nome, autor, editora, prateleira,ISBN,ISSN;
+                } else if (retorno.equals("2")) {
+                    String nome, autor, editora, prateleira, ISBN, ISSN;
                     int edicao, ano, secao, CDD;
 
                     System.out.println("Informe o nome da revista:");
@@ -91,7 +91,7 @@ public class Main {
                     System.out.println("Informe o CDD da revista:");
                     CDD = inp.nextInt();
 
-                    revistas[j]=new Revista (ISSN,nome, autor, editora,prateleira,ISBN,edicao,ano,secao,CDD);
+                    revistas[j] = new Revista(ISSN, nome, autor, editora, prateleira, ISBN, edicao, ano, secao, CDD);
 
                     j++;
                     System.out.println("Revista cadastrada com sucesso!");
@@ -101,10 +101,10 @@ public class Main {
 
 
             //Procurar livros/revista
-            if(retorno.equals("2")){
+            if (retorno.equals("2")) {
                 System.out.println("1- Livro \n2- Revista");
                 retorno = inp.next();
-                if(retorno.equals("1")) {
+                if (retorno.equals("1")) {
                     String nomeProcura;
 
                     System.out.println("Digite o nome ou autor do livro que deseja procurar:");
@@ -124,25 +124,25 @@ public class Main {
                                     livros[k].getCDD() + " ");
                         }
                     }
-                }else if(retorno.equals("2")){
+                } else if (retorno.equals("2")) {
                     String nomeProcura;
                     int numeroProcura;
 
                     System.out.println("Digite o nome ou autor da revista que deseja procurar:");
-                    nomeProcura= inp.next();
+                    nomeProcura = inp.next();
 
-                    for(int k=0;k<j;k++) {
-                        if(revistas[k].getNome().indexOf(nomeProcura)!=-1||revistas[k].getAutor().indexOf(nomeProcura)!=-1){
-                            System.out.println("Revista: "+ (k+1));
-                            System.out.println(revistas[k].getNome()+", "+
-                                    revistas[k].getAutor()+", "+
-                                    revistas[k].getEditora()+", "+
-                                    revistas[k].getPrateleira()+", "+
-                                    revistas[k].getISSN()+", "+
-                                    revistas[k].getEdicao()+", "+
-                                    revistas[k].getAno()+", "+
-                                    revistas[k].getSecao()+", "+
-                                    revistas[k].getCDD()+" ");
+                    for (int k = 0; k < j; k++) {
+                        if (revistas[k].getNome().indexOf(nomeProcura) != -1 || revistas[k].getAutor().indexOf(nomeProcura) != -1) {
+                            System.out.println("Revista: " + (k + 1));
+                            System.out.println(revistas[k].getNome() + ", " +
+                                    revistas[k].getAutor() + ", " +
+                                    revistas[k].getEditora() + ", " +
+                                    revistas[k].getPrateleira() + ", " +
+                                    revistas[k].getISSN() + ", " +
+                                    revistas[k].getEdicao() + ", " +
+                                    revistas[k].getAno() + ", " +
+                                    revistas[k].getSecao() + ", " +
+                                    revistas[k].getCDD() + " ");
                         }
                     }
                 }
@@ -151,10 +151,10 @@ public class Main {
 
 
             //Listar livros/revista
-            if(retorno.equals("3")){
+            if (retorno.equals("3")) {
                 System.out.println("1- Livro \n2- Revista");
                 retorno = inp.next();
-                if(retorno.equals("1")) {
+                if (retorno.equals("1")) {
                     for (int k = 0; k < i; k++) {
                         System.out.println("Livro: " + (k + 1));
                         System.out.println(livros[k].getNome() + ", " +
@@ -169,17 +169,17 @@ public class Main {
                         );
                     }
                 } else if (retorno.equals("2")) {
-                    for(int k=0; k<j;k++){
-                        System.out.println("Revista: "+ (k+1));
-                        System.out.println(revistas[k].getNome()+", "+
-                                revistas[k].getAutor()+", "+
-                                revistas[k].getEditora()+", "+
-                                revistas[k].getPrateleira()+", "+
-                                revistas[k].getISSN()+", "+
-                                revistas[k].getEdicao()+", "+
-                                revistas[k].getAno()+", "+
-                                revistas[k].getSecao()+", "+
-                                revistas[k].getCDD()+" "
+                    for (int k = 0; k < j; k++) {
+                        System.out.println("Revista: " + (k + 1));
+                        System.out.println(revistas[k].getNome() + ", " +
+                                revistas[k].getAutor() + ", " +
+                                revistas[k].getEditora() + ", " +
+                                revistas[k].getPrateleira() + ", " +
+                                revistas[k].getISSN() + ", " +
+                                revistas[k].getEdicao() + ", " +
+                                revistas[k].getAno() + ", " +
+                                revistas[k].getSecao() + ", " +
+                                revistas[k].getCDD() + " "
                         );
                     }
                 }
@@ -187,25 +187,114 @@ public class Main {
             } // fechando o if
 
             //Quantidade cadastrada
-            if(retorno.equals("4")){
+            if (retorno.equals("4")) {
                 System.out.println("Total = 1000");
-                System.out.println("Usado = "+(i+j));
-                System.out.println("Livre = "+(1000 - (i+j)));
+                System.out.println("Usado = " + (i + j));
+                System.out.println("Livre = " + (1000 - (i + j)));
 
             } // fechando o if
 
 
-            //Excluir último elemento da lista
-            if(retorno.equals("5")){
-                if(i>0) {
-                    i--;
-                    System.out.println("Excluído com sucesso!");
-                }else{
-                    System.out.println("Não existe nenhum livro cadastrado!");
+            //Excluir livro/revista
+            if (retorno.equals("5")) {
+                System.out.println("1- Livro \n2- Revista");
+                retorno = inp.next();
+                if (retorno.equals("1")) {
+                    retorno = " ";
+                    for (int k = 0; k < i; k++) {
+                        System.out.println("Livro: " + (k + 1));
+                        System.out.println(livros[k].getNome() + ", " +
+                                livros[k].getAutor() + ", " +
+                                livros[k].getEditora() + ", " +
+                                livros[k].getPrateleira() + ", " +
+                                livros[k].getISBN() + ", " +
+                                livros[k].getEdicao() + ", " +
+                                livros[k].getAno() + ", " +
+                                livros[k].getSecao() + ", " +
+                                livros[k].getCDD() + " "
+                        );
+                    }
+                    int k;
+                    System.out.println("Qual livro deseja excluir?");
+                    retorno = inp.next();
+                    if (Integer.parseInt(retorno) <= i && Integer.parseInt(retorno) >= 1) {
+                        i--;
+                        for (k = Integer.parseInt(retorno) - 1; k <= 1; k++) {
+                            livros[k] = livros[k + 1];
+                        }
+                        livros[k + 1] = null;
+                    } else {
+                        System.out.println("Fora da faixa!");
+                    }
+
+                } else if (retorno.equals("2")) {
+                    retorno = " ";
+                    for (int k = 0; k < j; k++) {
+                        System.out.println("Revista: " + (k + 1));
+                        System.out.println(revistas[k].getNome() + ", " +
+                                revistas[k].getAutor() + ", " +
+                                revistas[k].getEditora() + ", " +
+                                revistas[k].getPrateleira() + ", " +
+                                revistas[k].getISSN() + ", " +
+                                revistas[k].getEdicao() + ", " +
+                                revistas[k].getAno() + ", " +
+                                revistas[k].getSecao() + ", " +
+                                revistas[k].getCDD() + " "
+                        );
+                    }
+                    int k;
+                    System.out.println("Qual revista deseja excluir?");
+                    retorno = inp.next();
+                    if (Integer.parseInt(retorno) <= i && Integer.parseInt(retorno) >= 1) {
+                        i--;
+                        for (k = Integer.parseInt(retorno) - 1; k <= 1; k++) {
+                            revistas[k] = revistas[k + 1];
+                        }
+                        revistas[k + 1] = null;
+                    } else {
+                        System.out.println("Fora da faixa!");
+                    }
                 }
+                retorno = "";
             }
 
-        }while(!retorno.equals("7"));  // Fechando programa
+
+            //Ordenar livros/revista
+            if (retorno.equals("6")) {
+                System.out.println("1- Livro \n2- Revista");
+                retorno = inp.next();
+                if (retorno.equals("1")) {
+                    for (int k = 0; k < (i - 1); k++) {
+                        for (int z = 0; z < (i - 1); z++) {
+                            Livro aux = new Livro();
+                            Livro aux1 = new Livro();
+                            aux = livros[z];
+                            aux1 = livros[z + 1];
+                            if (aux.getNome().toLowerCase().compareTo(aux1.getNome().toLowerCase()) > 0) {
+                                livros[z] = aux1;
+                                livros[z + 1] = aux;
+                            }
+                        }
+                    }
+                } else if (retorno.equals("2")) {
+                    for (int k = 0; k < (j - 1); k++) {
+                        for (int z = 0; z < (j - 1); z++) {
+                            Revista aux = new Revista();
+                            Revista aux1 = new Revista();
+                            aux = revistas[z];
+                            aux1 = revistas[z + 1];
+                            if (aux.getNome().toLowerCase().compareTo(aux1.getNome().toLowerCase()) > 0) {
+                                revistas[z] = aux1;
+                                revistas[z + 1] = aux;
+                            }
+                        }
+                    }
+                }
+                retorno = "";
+            }
+
+
+        } while (!retorno.equals("7"));  // Fechando programa
 
         System.out.println("Fim do programa");
     }

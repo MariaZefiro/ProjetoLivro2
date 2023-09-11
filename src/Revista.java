@@ -5,6 +5,9 @@ public class Revista extends Livro{
         super(nome,autor,editora,prateleira,ISBN,edicao,ano,secao,CDD);
         this.ISSN = ISSN;
     }
+    public Revista( ){
+
+    }
 
     public String getISSN() {
         return this.ISSN;
